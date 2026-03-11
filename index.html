@@ -200,37 +200,61 @@
   .section-center { text-align: center; margin-bottom: 3rem; }
 
   /* ── SERVICES ── */
-  .services { background: var(--white); }
+  .services { background: var(--sky); }
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.8rem;
-    max-width: 1100px; margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .card {
-    background: var(--sky);
-    border-radius: 24px;
+    border-radius: 20px;
     padding: 2.5rem 1.8rem 2rem;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(14,143,191,0.2);
-    transition: transform 0.25s, box-shadow 0.25s;
-    border-bottom: 6px solid var(--deep);
     position: relative; overflow: hidden;
+    transition: transform 0.3s cubic-bezier(.36,1.4,.64,1);
+    cursor: default;
+    min-height: 260px;
+    display: flex; flex-direction: column; justify-content: flex-end;
   }
+  .card:hover { transform: translateY(-10px) rotate(-1.5deg); }
   .card::before {
     content: '';
-    position: absolute; top: -30px; right: -30px;
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
+    position: absolute; top: -40px; right: -40px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
   }
-  .card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(14,143,191,0.3); }
-  .card-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+  .card::after {
+    content: '';
+    position: absolute; bottom: -30px; left: -30px;
+    width: 100px; height: 100px; border-radius: 50%;
+    background: rgba(0,0,0,0.06);
+  }
+  .card-tag {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+    padding: 0.3rem 0.9rem; border-radius: 999px;
+    background: rgba(255,255,255,0.25); color: rgba(255,255,255,0.95);
+    display: inline-block; width: fit-content; margin-bottom: 0.8rem;
+  }
   .card h3 {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.4rem; color: var(--navy); margin-bottom: 0.6rem;
+    font-size: 1.7rem; color: #fff; line-height: 1.1;
+    margin-bottom: 0.6rem;
+    text-shadow: 1px 2px 0 rgba(0,0,0,0.15);
+    position: relative; z-index: 1;
   }
-  .card p { font-size: 0.95rem; color: var(--navy); opacity: 0.85; font-weight: 600; }
+  .card p {
+    font-size: 0.88rem; color: rgba(255,255,255,0.88);
+    font-weight: 800; line-height: 1.45;
+    position: relative; z-index: 1;
+  }
+  .c1 { background: #0d2f45; }
+  .c2 { background: #e0a800; }
+  .c3 { background: #d43a7a; }
+  .c4 { background: #0a8fbf; }
+  @media (max-width: 750px) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 420px) { .cards { grid-template-columns: 1fr; } }
 
   /* ── WHY US ── */
   .why { background: var(--navy); }
@@ -431,25 +455,25 @@
     <span class="section-title">Our Services</span>
   </div>
   <div class="cards">
-    <div class="card">
-      <span class="card-icon">👕</span>
+    <div class="card c1">
+      <span class="card-tag">Wash</span>
       <h3>Service Wash</h3>
-      <p>Drop it off, we'll wash, dry and fold it perfectly for you.</p>
+      <p>Drop it off, we'll wash, dry &amp; fold it perfectly for you.</p>
     </div>
-    <div class="card">
-      <span class="card-icon">🛏️</span>
-      <h3>Bed Linen</h3>
-      <p>Fresh, crisp sheets every time — professionally cleaned.</p>
-    </div>
-    <div class="card">
-      <span class="card-icon">🛁</span>
+    <div class="card c2">
+      <span class="card-tag">Bedding</span>
       <h3>Duvets</h3>
       <p>Large-capacity machines for duvets of all sizes, deeply cleaned.</p>
     </div>
-    <div class="card">
-      <span class="card-icon">🧺</span>
-      <h3>Towel Hire</h3>
-      <p>Clean, fluffy towels available for hire — ideal for hospitality businesses.</p>
+    <div class="card c3">
+      <span class="card-tag">Linen</span>
+      <h3>Bed Linen</h3>
+      <p>Fresh, crisp sheets every time — professionally laundered.</p>
+    </div>
+    <div class="card c4">
+      <span class="card-tag">Hire</span>
+      <h3>Linen Hire</h3>
+      <p>Quality linen for hire — perfect for hospitality &amp; holiday lets.</p>
     </div>
   </div>
 </section>
@@ -490,7 +514,7 @@
     <span class="pill">🫧 Service Wash</span>
     <span class="pill">🛏️ Bed Linen</span>
     <span class="pill">🛁 Duvets</span>
-    <span class="pill">🧺 Towel Hire</span>
+    <span class="pill">🧺 Linen Hire</span>
     <span class="pill">📞 Call for Pricing</span>
   </div>
 </div>
@@ -522,7 +546,7 @@
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <small>Email</small>
-          <a href="mailto:shinelaundrybognor@hotmail.com">shinelaundrybognor@hotmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#b7c4dfded9d2dbd6c2d9d3c5ced5d8d0d9d8c5f7dfd8c3dad6dedb99d4d8da"><span class="__cf_email__" data-cfemail="cfbca7a6a1aaa3aebaa1abbdb6ada0a8a1a0bd8fa7a0bba2aea6a3e1aca0a2">[email&#160;protected]</span></a>
         </div>
       </div>
       <div class="contact-item">
@@ -552,7 +576,7 @@
 <!-- Floating phone button -->
 <a href="tel:01243345241" class="phone-float">📞 Call Us</a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Generate floating bubbles
   const container = document.getElementById('bubblesContainer');
   const colors = ['#7de8ff','#f9e11e','#ffffff','#ff6eb4','#1ec8f5'];
@@ -561,14 +585,4 @@
     b.className = 'bubble';
     const size = 20 + Math.random() * 80;
     b.style.cssText = `
-      width:${size}px; height:${size}px;
-      left:${Math.random()*100}%;
-      background:${colors[Math.floor(Math.random()*colors.length)]};
-      animation-duration:${6+Math.random()*10}s;
-      animation-delay:${Math.random()*10}s;
-    `;
-    container.appendChild(b);
-  }
-</script>
-</body>
-</html>
+      width:${size}px; height:${size}px
