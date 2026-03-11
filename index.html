@@ -89,7 +89,7 @@
   /* ── HERO ── */
   .hero {
     position: relative; z-index: 5;
-    min-height: 88vh;
+    min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
@@ -168,8 +168,8 @@
 
   /* hero washing machine SVG */
   .hero-machine {
-    position: absolute; right: 5%; bottom: -30px;
-    width: 220px; opacity: 0.12;
+    position: absolute; right: 5%; bottom: 0;
+    width: 180px; opacity: 0.12;
     pointer-events: none;
     animation: float-bob 4s ease-in-out infinite;
   }
@@ -458,7 +458,7 @@
   <div>
     <div class="hero-badge">✨ Bognor Regis's Favourite Laundry</div>
     <h2>Clean. <span>Fresh.</span><br>Spotless.</h2>
-    <p class="sub">Service washes · Duvets · Bed linen · Towel hire</p>
+    <p class="sub">Service washes · Duvets · Bed linen · Linen hire</p>
     <div class="hero-ctas">
       <a href="tel:01243345241" class="btn btn-primary">📞 01243 345 241</a>
       <a href="#services" class="btn btn-outline">Our Services</a>
@@ -572,7 +572,7 @@
         <div class="contact-icon">✉️</div>
         <div class="contact-item-text">
           <small>Email</small>
-          <a href="/cdn-cgi/l/email-protection#b7c4dfded9d2dbd6c2d9d3c5ced5d8d0d9d8c5f7dfd8c3dad6dedb99d4d8da"><span class="__cf_email__" data-cfemail="cfbca7a6a1aaa3aebaa1abbdb6ada0a8a1a0bd8fa7a0bba2aea6a3e1aca0a2">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#becdd6d7d0dbd2dfcbd0daccc7dcd1d9d0d1ccfed6d1cad3dfd7d290ddd1d3"><span class="__cf_email__" data-cfemail="9eedf6f7f0fbf2ffebf0faece7fcf1f9f0f1ecdef6f1eaf3fff7f2b0fdf1f3">[email&#160;protected]</span></a>
         </div>
       </div>
       <div class="contact-item">
@@ -602,13 +602,7 @@
 <!-- Floating phone button -->
 <a href="tel:01243345241" class="phone-float">📞 Call Us</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Generate floating bubbles
   const container = document.getElementById('bubblesContainer');
-  const colors = ['#7de8ff','#f9e11e','#ffffff','#ff6eb4','#1ec8f5'];
-  for (let i = 0; i < 22; i++) {
-    const b = document.createElement('div');
-    b.className = 'bubble';
-    const size = 20 + Math.random() * 80;
-    b.style.cssText = `
-      width:${size}px; height:${size}px
+  const colors =
