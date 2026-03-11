@@ -257,21 +257,49 @@
   @media (max-width: 420px) { .cards { grid-template-columns: 1fr; } }
 
   /* ── WHY US ── */
-  .why { background: var(--navy); }
-  .why .section-title { color: var(--yellow); }
+  .why { background: var(--white); }
   .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem; max-width: 900px; margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    max-width: 1000px;
+    margin: 0 auto;
   }
-  .why-item { text-align: center; }
-  .why-item .num {
+  .why .section-title { color: var(--navy); }
+  .why-item {
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    position: relative; overflow: hidden;
+    transition: transform 0.25s cubic-bezier(.36,1.4,.64,1);
+    cursor: default;
+  }
+  .why-item:hover { transform: translateY(-8px); }
+  .why-item::after {
+    content: '';
+    position: absolute; bottom: -20px; right: -20px;
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+  }
+  .why-letter {
     font-family: 'Fredoka One', cursive;
-    font-size: 3.5rem; color: var(--sky);
-    line-height: 1;
+    font-size: 4rem; line-height: 1;
+    color: rgba(255,255,255,0.2);
+    display: block; margin-bottom: 0.8rem;
   }
-  .why-item h4 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: var(--white); margin: 0.3rem 0; }
-  .why-item p { font-size: 0.9rem; color: rgba(255,255,255,0.65); font-weight: 600; }
+  .why-item h4 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.35rem; color: #fff;
+    margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .why-item p {
+    font-size: 0.85rem; color: rgba(255,255,255,0.8);
+    font-weight: 700; line-height: 1.45;
+  }
+  .w1 { background: #1ec8f5; }
+  .w2 { background: #0d2f45; }
+  .w3 { background: #f9a11e; }
+  .w4 { background: #d43a7a; }
+  @media (max-width: 700px) { .why-grid { grid-template-columns: 1fr 1fr; } }
 
   /* ── PRICE STRIP ── */
   .price-strip {
@@ -481,28 +509,28 @@
 <!-- Why Us -->
 <section class="why" id="why">
   <div class="section-center">
-    <span class="section-title" style="color:var(--yellow);">Why Choose Shine?</span>
+    <span class="section-title">Why Choose Shine?</span>
   </div>
   <div class="why-grid">
-    <div class="why-item">
-      <div class="num">★★★★★</div>
+    <div class="why-item w1">
+      <span class="why-letter">A</span>
       <h4>5-Star Results</h4>
-      <p>Your clothes come back looking brand new every time.</p>
+      <p>Your clothes come back looking brand new every single time.</p>
     </div>
-    <div class="why-item">
-      <div class="num">⚡</div>
+    <div class="why-item w2">
+      <span class="why-letter">B</span>
       <h4>Fast Turnaround</h4>
-      <p>Same-day and next-day service available.</p>
+      <p>Same-day and next-day service — we know your time matters.</p>
     </div>
-    <div class="why-item">
-      <div class="num">💷</div>
+    <div class="why-item w3">
+      <span class="why-letter">C</span>
       <h4>Great Value</h4>
-      <p>Affordable prices with no hidden charges.</p>
+      <p>Affordable prices with absolutely no hidden charges.</p>
     </div>
-    <div class="why-item">
-      <div class="num">📍</div>
-      <h4>Local & Trusted</h4>
-      <p>Proudly serving Bognor Regis and the surrounding area.</p>
+    <div class="why-item w4">
+      <span class="why-letter">D</span>
+      <h4>Local &amp; Trusted</h4>
+      <p>Proudly serving Bognor Regis and the surrounding community.</p>
     </div>
   </div>
 </section>
