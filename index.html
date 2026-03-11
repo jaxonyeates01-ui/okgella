@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shine Laundry – Bognor Regis</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
   :root {
     --sky: #1ec8f5;
@@ -257,49 +257,47 @@
   @media (max-width: 420px) { .cards { grid-template-columns: 1fr; } }
 
   /* ── WHY US ── */
-  .why { background: var(--white); }
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+  .why { background: var(--yellow); }
   .why .section-title { color: var(--navy); }
+  .why-grid {
+    display: flex; flex-wrap: wrap;
+    max-width: 960px; margin: 0 auto;
+    border: 4px solid var(--navy); border-radius: 24px;
+    overflow: hidden;
+  }
   .why-item {
-    border-radius: 20px;
-    padding: 2rem 1.5rem;
-    position: relative; overflow: hidden;
-    transition: transform 0.25s cubic-bezier(.36,1.4,.64,1);
+    flex: 1; min-width: 200px;
+    padding: 2.5rem 2rem;
+    border-right: 4px solid var(--navy);
+    text-align: center;
+    transition: background 0.2s;
     cursor: default;
   }
-  .why-item:hover { transform: translateY(-8px); }
-  .why-item::after {
-    content: '';
-    position: absolute; bottom: -20px; right: -20px;
-    width: 80px; height: 80px; border-radius: 50%;
-    background: rgba(255,255,255,0.12);
-  }
-  .why-letter {
-    font-family: 'Fredoka One', cursive;
-    font-size: 4rem; line-height: 1;
-    color: rgba(255,255,255,0.2);
-    display: block; margin-bottom: 0.8rem;
+  .why-item:last-child { border-right: none; }
+  .why-item:hover { background: var(--navy); }
+  .why-item:hover .why-num,
+  .why-item:hover h4 { color: var(--yellow); }
+  .why-item:hover p { color: rgba(249,225,30,0.7); }
+  .why-num {
+    font-family: 'Bebas Neue', 'Fredoka One', cursive;
+    font-size: 4.5rem; color: var(--navy);
+    line-height: 1; display: block;
+    transition: color 0.2s;
   }
   .why-item h4 {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.35rem; color: #fff;
-    margin-bottom: 0.5rem; line-height: 1.2;
+    font-size: 1.15rem; color: var(--navy);
+    margin: 0.3rem 0 0.5rem; transition: color 0.2s;
   }
   .why-item p {
-    font-size: 0.85rem; color: rgba(255,255,255,0.8);
-    font-weight: 700; line-height: 1.45;
+    font-size: 0.85rem; color: rgba(13,47,69,0.6);
+    font-weight: 700; transition: color 0.2s;
   }
-  .w1 { background: #1ec8f5; }
-  .w2 { background: #0d2f45; }
-  .w3 { background: #f9a11e; }
-  .w4 { background: #d43a7a; }
-  @media (max-width: 700px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 700px) {
+    .why-grid { flex-direction: column; }
+    .why-item { border-right: none; border-bottom: 4px solid var(--navy); }
+    .why-item:last-child { border-bottom: none; }
+  }
 
   /* ── PRICE STRIP ── */
   .price-strip {
@@ -512,25 +510,25 @@
     <span class="section-title">Why Choose Shine?</span>
   </div>
   <div class="why-grid">
-    <div class="why-item w1">
-      <span class="why-letter">A</span>
-      <h4>5-Star Results</h4>
-      <p>Your clothes come back looking brand new every single time.</p>
+    <div class="why-item">
+      <span class="why-num">5★</span>
+      <h4>Star Results</h4>
+      <p>Clothes come back looking brand new every time</p>
     </div>
-    <div class="why-item w2">
-      <span class="why-letter">B</span>
-      <h4>Fast Turnaround</h4>
-      <p>Same-day and next-day service — we know your time matters.</p>
+    <div class="why-item">
+      <span class="why-num">24h</span>
+      <h4>Turnaround</h4>
+      <p>Same-day &amp; next-day service available</p>
     </div>
-    <div class="why-item w3">
-      <span class="why-letter">C</span>
-      <h4>Great Value</h4>
-      <p>Affordable prices with absolutely no hidden charges.</p>
+    <div class="why-item">
+      <span class="why-num">£0</span>
+      <h4>Hidden Charges</h4>
+      <p>Transparent, honest pricing every time</p>
     </div>
-    <div class="why-item w4">
-      <span class="why-letter">D</span>
-      <h4>Local &amp; Trusted</h4>
-      <p>Proudly serving Bognor Regis and the surrounding community.</p>
+    <div class="why-item">
+      <span class="why-num">100%</span>
+      <h4>Local</h4>
+      <p>Proudly serving Bognor Regis &amp; surrounding areas</p>
     </div>
   </div>
 </section>
